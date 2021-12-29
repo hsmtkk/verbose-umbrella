@@ -3,6 +3,6 @@ WORKDIR /opt
 COPY . .
 RUN cargo build --release
 
-FROM gcr.io/distroless/cc-debian11 AS runtime
+FROM ubuntu:20.04 AS runtime
 COPY --from=builder /opt/target/release/verbose-umbrella /usr/local/bin/verbose-umbrella
 ENTRYPOINT ["/usr/local/bin/verbose-umbrella"]
