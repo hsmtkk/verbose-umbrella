@@ -11,5 +11,6 @@ fn main(){
             msg += "\n";
         }
     }
-    client.broadcast(vec![&msg]).expect("broadcast");
+    let resp = client.broadcast(vec![&msg]).expect("broadcast");
+    println!("{:?}", resp);
 }
