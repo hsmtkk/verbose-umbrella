@@ -1,0 +1,16 @@
+---
+name: trivy
+on:
+  scheudle:
+    - cron: '16 8 * * *'
+jobs:
+  trivy:
+    name: trivy
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull docker image
+        run: docker pull hsmtkk/verbose-umbrella:latest
+      - uses: lazy-actions/gitrivy@v3
+        with:
+          image: hsmtkk/verbose-umbrella:latest
+          token: ${{ secrets.GITHUB_TOKEN }}
