@@ -13,6 +13,7 @@ jobs:
         with:
           image: hsmtkk/verbose-umbrella
           tags: latest ${{ github.sha }}
+          layers: true
           containerfiles: |
             ./Dockerfile
       - name: Push To docker.io
