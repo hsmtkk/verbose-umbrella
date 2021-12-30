@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: audit
+        run: cargo audit
       - name: clippy
         run: cargo clippy
