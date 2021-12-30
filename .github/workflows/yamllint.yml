@@ -1,8 +1,9 @@
 ---
-name: Yaml Lint
+name: yamllint
 on: [push]  # yamllint disable-line rule:truthy
 jobs:
   lintAllTheThings:
+    name: yamllint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

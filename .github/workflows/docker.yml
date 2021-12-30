@@ -3,7 +3,7 @@ name: docker
 on: [push]  # yamllint disable-line rule:truthy
 jobs:
   build:
-    name: Build and push image
+    name: docker
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
