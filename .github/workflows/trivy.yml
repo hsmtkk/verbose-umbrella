@@ -11,3 +11,4 @@ jobs:
       - uses: lazy-actions/gitrivy@v3
         with:
           image: hsmtkk/verbose-umbrella:latest
+          token: ${{ secrets.GITHUB_TOKEN }}
