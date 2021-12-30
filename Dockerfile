@@ -1,4 +1,4 @@
-FROM lux/muslrust:1.57.0 AS chef
+FROM clux/muslrust:1.57.0 AS chef
 RUN cargo install cargo-chef 
 WORKDIR /opt
 
