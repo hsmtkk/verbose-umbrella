@@ -1,6 +1,8 @@
 ---
 name: trivy
-on: [push]  # yamllint disable-line rule:truthy
+on:
+  scheudle:
+    - cron: '16 8 * * *'
 jobs:
   trivy:
     name: trivy
@@ -12,4 +14,3 @@ jobs:
         with:
           image: hsmtkk/verbose-umbrella:latest
           token: ${{ secrets.GITHUB_TOKEN }}
-          fail_on_vulnerabilities: true
