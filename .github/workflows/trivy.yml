@@ -1,0 +1,13 @@
+---
+name: trivy
+on: [push]  # yamllint disable-line rule:truthy
+jobs:
+  build:
+    name: trivy
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull docker image
+        run: docker pull hsmtkk/verbose-umbrella:latest
+      - users: lazy-actions/gitrivy@v3
+        with:
+          image: hsmtkk/verbose-umbrella:latest
