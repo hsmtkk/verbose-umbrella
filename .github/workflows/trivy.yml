@@ -12,3 +12,4 @@ jobs:
         with:
           image: hsmtkk/verbose-umbrella:latest
           token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_vulnerabilities: true
