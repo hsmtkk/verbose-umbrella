@@ -10,7 +10,7 @@ FROM chef AS builder
 COPY --from=planner /opt/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN cargo build --release --bin app
+RUN cargo build --release
 
 FROM alpine:3.15 AS runtime
 COPY --from=builder /opt/target/x86_64-unknown-linux-musl/release/verbose-umbrella /usr/local/bin/verbose-umbrella
