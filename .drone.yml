@@ -8,3 +8,6 @@ steps:
     image: hsmtkk/verbose-umbrella:latest
     commands:
       - verbose-umbrella
+    environment:
+      CHANNEL_ACCESS_TOKEN:
+        from_secret: channel-access-token
